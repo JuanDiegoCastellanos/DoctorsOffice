@@ -1,0 +1,79 @@
+body {
+    background-image: url(img/medicos.png);
+    height: 100vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.container {
+    width: auto;
+    margin: auto;
+    position: static;
+    margin-left: 86%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.imagen-medicos {
+    width: 40%;
+    margin: auto;
+    position: static;
+    margin-left: 60%;
+    vertical-align: top;
+}
+
+.contenedor-principal {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+}
+
+.contenedor-login {
+    background-color: white;
+}
+
+.contenedor-formulario {
+    display: block;
+    flex-direction: column;
+}
+
+.contenedor-formulario {
+    color: white;
+    border: none;
+    height: 35px;
+    margin: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+form {
+    display: block;
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+
+.input-padron {
+    display: block;
+    margin: 0 0 20px;
+    padding: 10px 25px;
+    width: 80%;
+}
+
+.enviar {
+    width: 40%;
+    padding: 10px 0;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    background: orange;
+    border: none;
+    border-radius: 5px;
+    transition: 1s all;
+    cursor: pointer;
+}
+
+.enviar:hover {
+    background: rgb(0, 255, 208);
+    transform: scale(1.2);
+}

@@ -11,24 +11,25 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "SCHEDULES")
+@Table(name = "schedules")
 public class Schedule implements Serializable{
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "schedule_id", nullable = false)
+    @Column(name = "schedule_id")
     private Integer scheduleId;
 
-    @Column(name="schedule_week", nullable = false)
+    @Column(name="schedule_week")
     private String scheduleWeek;
 
-    @Column(name="schedule_day", nullable = false)
+    @Column(name="schedule_day")
     private String scheduleDay;
 
-    @Column(name ="schedule_hour", nullable = false)
+    @Column(name ="schedule_hour")
     private String scheduleHour;
 
     @ManyToOne
-    @JoinColumn(name = "doctor_id", nullable = false)
+    @JoinColumn(name = "doctor_id")
     private Doctor doctor;
 
     public Schedule() {

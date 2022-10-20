@@ -31,10 +31,10 @@ public class MedicalPrescriptionController {
     }
 
     @DeleteMapping(value = "/{id}")
-    public ResponseEntity<MedicalPrescription> delete(@PathVariable Integer medicalPrescriptionId) {
-        MedicalPrescription medicalPrescriptionObj = medicalPrescriptionServiceImpl.findById(medicalPrescriptionId);
+    public ResponseEntity<MedicalPrescription> delete(@PathVariable Integer id) {
+        MedicalPrescription medicalPrescriptionObj = medicalPrescriptionServiceImpl.findById(id);
         if (medicalPrescriptionObj != null) {
-            medicalPrescriptionServiceImpl.delete(medicalPrescriptionId);
+            medicalPrescriptionServiceImpl.delete(id);
         } else {
             return new ResponseEntity<>(medicalPrescriptionObj, HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -44,7 +44,7 @@ public class MedicalPrescriptionController {
     @PutMapping(value = "/")
     public ResponseEntity<MedicalPrescription> update(@RequestBody MedicalPrescription medicalPrescription){
         MedicalPrescription medicalPrescriptionObj = medicalPrescriptionServiceImpl.findById(medicalPrescription.getMedicalprescriptionId());
-        if(medicalPrescription!=null){
+        if(medicalPrescriptionObj!=null){
             medicalPrescriptionObj.setDate(medicalPrescription.getDate());
             medicalPrescriptionObj.setAmountMedicines(medicalPrescription.getAmountMedicines());
             medicalPrescriptionObj.setDoctor(medicalPrescription.getDoctor());
@@ -62,8 +62,8 @@ public class MedicalPrescriptionController {
     }
 
     @GetMapping("/list/{id}")
-    public MedicalPrescription getById(@PathVariable Integer medicalPrescriptionId){
-        return medicalPrescriptionServiceImpl.findById(medicalPrescriptionId);
+    public MedicalPrescription getById(@PathVariable Integer id){
+        return medicalPrescriptionServiceImpl.findById(id);
     }
     
     

@@ -31,10 +31,10 @@ public class AppointmentController {
     }
     
     @DeleteMapping(value = "/{id}")
-    public ResponseEntity<Appointment> delete(@PathVariable Integer appointmentId){
-        Appointment appointmentObj = appointmentServiceImpl.findById(appointmentId);
+    public ResponseEntity<Appointment> delete(@PathVariable Integer id){
+        Appointment appointmentObj = appointmentServiceImpl.findById(id);
         if(appointmentObj != null){
-            appointmentServiceImpl.delete(appointmentId);
+            appointmentServiceImpl.delete(id);
         }else{
             return new ResponseEntity<>(appointmentObj,HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -44,7 +44,7 @@ public class AppointmentController {
     @PutMapping(value = "/")
     public ResponseEntity<Appointment> update(@RequestBody Appointment appointment){
         Appointment appointmentObj = appointmentServiceImpl.findById(appointment.getAppointmentId());
-        if(appointment!=null){
+        if(appointmentObj!=null){
             appointmentObj.setDate(appointment.getDate());
             appointmentObj.setHour(appointment.getHour());
             appointmentObj.setDoctor(appointment.getDoctor());
@@ -62,8 +62,8 @@ public class AppointmentController {
     }
 
     @GetMapping("/list/{id}")
-    public Appointment getById(@PathVariable Integer apppointmentId){
-        return appointmentServiceImpl.findById(apppointmentId);
+    public Appointment getById(@PathVariable Integer id){
+        return appointmentServiceImpl.findById(id);
     }
     
 }

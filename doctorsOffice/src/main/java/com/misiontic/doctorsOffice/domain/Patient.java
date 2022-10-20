@@ -9,44 +9,43 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 
-
-@Entity
-@Table(name = "PATIENTS")
+@Table
+@Entity(name="patients")
 public class Patient implements Serializable{
     
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name = "patient_id", nullable = false)
+    @Column(name = "patient_id")
     private Integer patientId;
     
-    @Column(name="patient_name",nullable = false)
+    @Column(name="patient_name")
     private String  patientName;
     
-    @Column(name="patient_lastname", nullable = false)
+    @Column(name="patient_lastname")
     private String patientLastname;
     
-    @Column(name="patient_age", nullable = false)
-    private String patientAge;
+    @Column(name="patient_age")
+    private Integer patientAge;
     
-    @Column(name="patient_gender", nullable = false)
-    private String patientGender;
+    @Column(name="patient_gender")
+    private Integer patientGender;
     
-    @Column(name="patient_document", nullable = false)
+    @Column(name="patient_document")
     private String patientDocument;
     
-    @Column(name="patient_documentType", nullable = false)
+    @Column(name="patient_document_type")
     private String patientDocumentType;
     
-    @Column(name="patient_phoneNumber", nullable = false)
+    @Column(name="patient_phone_number")
     private String patientPhoneNumber;
     
-    @Column(name="patient_eps", nullable = false)
+    @Column(name="patient_eps")
     private String patientEps;
 
     public Patient() {
     }
 
-    public Patient(Integer patientId, String patientName, String patientLastname, String patientAge, String patientGender, String patientDocument, String patientDocumentType, String patientPhoneNumber, String patientEps) {
+    public Patient(Integer patientId, String patientName, String patientLastname, Integer patientAge, Integer patientGender, String patientDocument, String patientDocumentType, String patientPhoneNumber, String patientEps) {
         this.patientId = patientId;
         this.patientName = patientName;
         this.patientLastname = patientLastname;
@@ -82,19 +81,19 @@ public class Patient implements Serializable{
         this.patientLastname = patientLastname;
     }
 
-    public String getPatientAge() {
+    public Integer getPatientAge() {
         return patientAge;
     }
 
-    public void setPatientAge(String patientAge) {
+    public void setPatientAge(Integer patientAge) {
         this.patientAge = patientAge;
     }
 
-    public String getPatientGender() {
+    public Integer getPatientGender() {
         return patientGender;
     }
 
-    public void setPatientGender(String patientGender) {
+    public void setPatientGender(Integer patientGender) {
         this.patientGender = patientGender;
     }
 

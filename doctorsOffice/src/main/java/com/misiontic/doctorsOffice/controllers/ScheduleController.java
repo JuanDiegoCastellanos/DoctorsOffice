@@ -33,10 +33,10 @@ public class ScheduleController {
     
      
     @DeleteMapping(value = "/{id}")
-    public ResponseEntity<Schedule> delete(@PathVariable Integer scheduleId){
-          Schedule scheduleObj = scheduleServiceImpl.findById(scheduleId);
+    public ResponseEntity<Schedule> delete(@PathVariable Integer id){
+          Schedule scheduleObj = scheduleServiceImpl.findById(id);
         if(scheduleObj!= null){
-            scheduleServiceImpl.delete(scheduleId);
+            scheduleServiceImpl.delete(id);
         }else{
             return new ResponseEntity<>(scheduleObj,HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -46,7 +46,7 @@ public class ScheduleController {
     @PutMapping(value = "/")
     public ResponseEntity<Schedule> update(@RequestBody Schedule schedule){
         Schedule scheduleObj = scheduleServiceImpl.findById(schedule.getScheduleId());
-        if(schedule!=null){
+        if(scheduleObj!=null){
             scheduleObj.setScheduleWeek(schedule.getScheduleWeek());
             scheduleObj.setScheduleDay(schedule.getScheduleDay());
             scheduleObj.setScheduleHour(schedule.getScheduleHour());
@@ -64,8 +64,8 @@ public class ScheduleController {
     }
 
     @GetMapping("/list/{id}")
-    public Schedule getById(@PathVariable Integer scheduleId){
-        return scheduleServiceImpl.findById(scheduleId);
+    public Schedule getById(@PathVariable Integer id){
+        return scheduleServiceImpl.findById(id);
     }
     
 }

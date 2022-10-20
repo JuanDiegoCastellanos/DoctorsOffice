@@ -5,7 +5,7 @@ import java.util.List;
 public interface IAppointmentService {
     
     public Appointment save(Appointment appointment);
-    public void delete(Integer appointmentId);
-    public Appointment findById(Integer appointmentId);
+    public void delete(Integer id);
+    public Appointment findById(Integer id);
     public List<Appointment> findAll();
 }

@@ -32,10 +32,10 @@ public class DoctorController {
     }
     
     @DeleteMapping(value = "/{id}")
-    public ResponseEntity<Doctor> delete(@PathVariable Integer doctorId){
-        Doctor doctorObj = doctorServiceImpl.findById(doctorId);
+    public ResponseEntity<Doctor> delete(@PathVariable Integer id){
+        Doctor doctorObj = doctorServiceImpl.findById(id);
         if(doctorObj != null){
-            doctorServiceImpl.delete(doctorId);
+            doctorServiceImpl.delete(id);
         }else{
             return new ResponseEntity<>(doctorObj,HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -45,7 +45,7 @@ public class DoctorController {
     @PutMapping(value = "/")
     public ResponseEntity<Doctor> update(@RequestBody Doctor doctor){
         Doctor doctorObj = doctorServiceImpl.findById(doctor.getDoctorId());
-        if(doctor!=null){
+        if(doctorObj!=null){
             doctorObj.setDoctorName(doctor.getDoctorName());
             doctorObj.setDoctorLastname(doctor.getDoctorLastname());
             doctorObj.setDoctorAge(doctor.getDoctorAge());
@@ -66,7 +66,7 @@ public class DoctorController {
     }
 
     @GetMapping("/list/{id}")
-    public Doctor getById(@PathVariable Integer doctorId){
-        return doctorServiceImpl.findById(doctorId);
+    public Doctor getById(@PathVariable Integer id){
+        return doctorServiceImpl.findById(id);
     }
 }

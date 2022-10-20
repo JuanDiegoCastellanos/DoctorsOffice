@@ -12,26 +12,26 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="APPOINTMENTS")
+@Table(name="appointments")
 public class Appointment implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "appointments_id",nullable = false)
+    @Column(name = "appointments_id")
     private Integer appointmentId;
     
-    @Column(name = "date", nullable = false)
+    @Column(name = "date")
     private String date;
     
-    @Column(name = "hour", nullable = false)
+    @Column(name = "hour")
     private String hour;
     
     @ManyToOne
-    @JoinColumn(name = "patient_id", nullable = false)
+    @JoinColumn(name = "patient_id")
     private Patient patient;
     
     @ManyToOne
-    @JoinColumn(name = "doctor_id", nullable = false)
+    @JoinColumn(name = "doctor_id")
     private Doctor doctor;
 
     public Appointment() {

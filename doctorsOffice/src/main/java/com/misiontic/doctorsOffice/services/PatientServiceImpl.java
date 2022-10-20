@@ -3,7 +3,6 @@ package com.misiontic.doctorsOffice.services;
 
 import com.misiontic.doctorsOffice.domain.Patient;
 import com.misiontic.doctorsOffice.repositories.IPatientRepo;
-import com.misiontic.doctorsOffice.services.IPatientService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

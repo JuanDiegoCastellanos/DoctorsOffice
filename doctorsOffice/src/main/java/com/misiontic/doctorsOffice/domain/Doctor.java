@@ -9,40 +9,40 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="DOCTORS")
+@Table
+@Entity(name="doctors")
 public class Doctor implements Serializable{
     
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column
+    @Column(name="doctor_id")
     private Integer doctorId;
     
-    @Column(name="doctor_name", nullable = false)
+    @Column(name="doctor_name")
     private String doctorName;
 
-    @Column(name="doctor_lastname", nullable = false)
+    @Column(name="doctor_lastname")
     private String doctorLastname;
 
-    @Column(name="doctor_age", nullable = false)
-    private String doctorAge;
+    @Column(name="doctor_age")
+    private Integer doctorAge;
 
-    @Column(name="doctor_gender", nullable = false)
-    private String doctorGender;
+    @Column(name="doctor_gender")
+    private Integer doctorGender;
 
-    @Column(name="doctor_document", nullable = false)
+    @Column(name="doctor_document")
     private String doctorDocument;
 
-    @Column(name="doctor_documentType", nullable = false)
+    @Column(name="doctor_documentType")
     private String doctorDocumentType;
 
-    @Column(name="doctor_phoneNumber", nullable = false)
+    @Column(name="doctor_phoneNumber")
     private String doctorPhoneNumber;
 
     public Doctor() {
     }
 
-    public Doctor(Integer doctorId, String doctorName, String doctorLastname, String doctorAge, String doctorGender, String doctorDocument, String doctorDocumentType, String doctorPhoneNumber) {
+    public Doctor(Integer doctorId, String doctorName, String doctorLastname, Integer doctorAge, Integer doctorGender, String doctorDocument, String doctorDocumentType, String doctorPhoneNumber) {
         this.doctorId = doctorId;
         this.doctorName = doctorName;
         this.doctorLastname = doctorLastname;
@@ -77,19 +77,19 @@ public class Doctor implements Serializable{
         this.doctorLastname = doctorLastname;
     }
 
-    public String getDoctorAge() {
+    public Integer getDoctorAge() {
         return doctorAge;
     }
 
-    public void setDoctorAge(String doctorAge) {
+    public void setDoctorAge(Integer doctorAge) {
         this.doctorAge = doctorAge;
     }
 
-    public String getDoctorGender() {
+    public Integer getDoctorGender() {
         return doctorGender;
     }
 
-    public void setDoctorGender(String doctorGender) {
+    public void setDoctorGender(Integer doctorGender) {
         this.doctorGender = doctorGender;
     }
 

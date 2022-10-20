@@ -1,6 +1,5 @@
 package com.misiontic.doctorsOffice.controllers;
 
-
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,31 +21,31 @@ import com.misiontic.doctorsOffice.services.PatientServiceImpl;
 @CrossOrigin("*")
 @RequestMapping("/patient")
 public class PatientController {
-    
+
     @Autowired
     private PatientServiceImpl patientServiceImpl;
-    
+
     @PostMapping(value = "/")
-    public ResponseEntity<Patient> add(@RequestBody Patient patient){
+    public ResponseEntity<Patient> add(@RequestBody Patient patient) {
         Patient patientObj = patientServiceImpl.save(patient);
         return new ResponseEntity<>(patientObj, HttpStatus.OK);
     }
-    
+
     @DeleteMapping(value = "/{id}")
-    public ResponseEntity<Patient> delete(@PathVariable Integer patientId){
-        Patient patientObj = patientServiceImpl.findById(patientId);
-        if(patientObj != null){
-            patientServiceImpl.delete(patientId);
-        }else{
-            return new ResponseEntity<>(patientObj,HttpStatus.INTERNAL_SERVER_ERROR);
+    public ResponseEntity<Patient> delete(@PathVariable Integer id) {
+        Patient patientObj = patientServiceImpl.findById(id);
+        if (patientObj != null) {
+            patientServiceImpl.delete(id);
+        } else {
+            return new ResponseEntity<>(patientObj, HttpStatus.INTERNAL_SERVER_ERROR);
         }
         return new ResponseEntity<>(patientObj, HttpStatus.OK);
     }
-    
-     @PutMapping(value = "/")
-    public ResponseEntity<Patient> update(@RequestBody Patient patient){
+
+    @PutMapping(value = "/")
+    public ResponseEntity<Patient> update(@RequestBody Patient patient) {
         Patient patientObj = patientServiceImpl.findById(patient.getPatientId());
-        if(patient!=null){
+        if (patientObj != null) {
             patientObj.setPatientName(patient.getPatientName());
             patientObj.setPatientLastname(patient.getPatientLastname());
             patientObj.setPatientAge(patient.getPatientAge());
@@ -56,19 +55,19 @@ public class PatientController {
             patientObj.setPatientPhoneNumber(patient.getPatientPhoneNumber());
             patientObj.setPatientEps(patient.getPatientEps());
             patientServiceImpl.save(patientObj);
-        }else{
+        } else {
             return new ResponseEntity<>(patientObj, HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return  new ResponseEntity<>(patientObj,HttpStatus.OK);
+        return new ResponseEntity<>(patientObj, HttpStatus.OK);
     }
-    
+
     @GetMapping("/list")
-    public List<Patient> getAll(){
-        return patientServiceImpl.findAll();
+    public List<Patient> getAll() {
+        return (List<Patient>) patientServiceImpl.findAll();
     }
 
     @GetMapping("/list/{id}")
-    public Patient getById(@PathVariable Integer patientId){
-        return patientServiceImpl.findById(patientId);
+    public Patient getById(@PathVariable Integer id) {
+        return patientServiceImpl.findById(id);
     }
 }

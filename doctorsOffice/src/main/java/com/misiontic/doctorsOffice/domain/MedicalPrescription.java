@@ -10,8 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "MEDICALPRESCRIPTIONS")
+@Table
+@Entity(name = "medicalprescriptions")
 public class MedicalPrescription implements Serializable{
 
     @Id

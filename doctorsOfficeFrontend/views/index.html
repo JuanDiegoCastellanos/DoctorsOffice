@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../assets/css/styles.css" media="screen" />
+    <title>Doctor's Office MINTIC 2022</title>
+</head>
+<body>
+    <header id="head">
+        <nav class="navbar navbar-expand-lg bg-light border">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="https://unabvirtual.unab.edu.co/soportemisiontic2022/img/Misiontic-Unab.png" height="40"
+                        width="100" />
+                    <img src="../assets/imgs/projectTitle.png" width="200" height="60" />
+                </a>
+                <button class="p-0 navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <img src="../assets/imgs/menuIcon.png" height="50" width="50" />
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../views/index.html">Home</a>
+                        </li>
+        
+                        <li class="nav-item btn-group dropend">
+                            <a href="./patients/index.html" class="nav-link ">Patiens</a>
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">                                
+                            </a>
+                            <ul class="dropdown-menu border border-1 border-primary">
+                                <li><a class="dropdown-item" href="./patients/create.html">New</a></li>
+                                <li><a class="dropdown-item" href="./patients/findOne.html">Search</a></li>
+                            </ul>
+                        </li>
+        
+                        <li class="nav-item btn-group dropend">
+                            <a href="./doctors/index.html" class="nav-link ">Doctors</a>
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">                                
+                            </a>
+                            <ul class="dropdown-menu border border-1 border-primary">
+                                <li><a class="dropdown-item" href="./doctors/create.html">New</a></li>                        
+                                <li><a class="dropdown-item" href="./doctors/findOne.html">Search</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="./schedules/index.html">Schedules</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item btn-group dropend">
+                            <a href="./appointments/index.html" class="nav-link ">Appointments</a>
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                            </a>
+                            <ul class="dropdown-menu border border-1 border-primary">
+                                <li><a class="dropdown-item" href="./appointments/create.html">New</a></li>                        
+                                <li><a class="dropdown-item" href="./appointments/findOne.html">Search</a></li>
+                            </ul>
+                        </li>
+        
+                        <li class="nav-item btn-group dropend">
+                            <a href="./medical_prescriptions/index.html" class="nav-link ">Medical Prescriptions</a>
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                            </a>
+                            <ul class="dropdown-menu border border-1 border-primary">
+                                <li><a class="dropdown-item" href="./medical_prescriptions/index.html">New</a></li>                        
+                                <li><a class="dropdown-item" href="./medical_prescriptions/findOne.html">Search</a></li>
+                            </ul>
+                        </li>
+        
+                        <li class="nav-item btn-group dropend">
+                            <a href="./medicines/index.html" class="nav-link ">Medicines</a>
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                            </a>
+                            <ul class="dropdown-menu border border-1 border-primary">
+                                <li><a class="dropdown-item" href="./medicines/create.html">New</a></li>                        
+                                <li><a class="dropdown-item" href="./medicines/findOne.html">Search</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <span class="navbar-text">
+                        <img src="../assets/imgs/teamName.png" alt="MACRO-CODE" height="60" width="200">
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div>
+        <img src="../assets/imgs/mainFondo.jpg" class="img-fluid" alt="mainFondo" />
+        <div class="container my-4 text-center">
+            <h4>Quiénes somos?</h4>
+            <p> Somos <b>MACRO-CODE</b> un equipo de desarrolladores fullstack formados por <b>MISIONTIC y UNAB</b>,
+                este es el software o producto final
+                del <b>ciclo 3- Desarrollo de Software</b>
+            </p>
+            <div class="row row-cols-auto g-3 justify-content-center">
+                <div class="col">
+                    <div class="card shadow-sm" style="width: 18rem;">
+                        <img src="../assets/imgs/fotoPerfilVillao.jpeg" height="350" class="card-img-top"
+                            alt="avatarIcon">
+                        <div class="card-body">
+                            <h5 class="card-title">Juan Diego Castellanos</h5>
+                            <p class="card-text">Ingeniero de sistemas con énfasis en gestión y liderazgo de proyectos,
+                                experiencia
+                                y conocimientos holísticos en desarrollo de software, gestión e implementación de
+                                métodologías ágiles (Scrum, Kanban y Xp),
+                                desarrollador Fullstack mobile (Flutter), desarrollador Ruby on Rails, Flutter, Java,
+                                Nodejs y React</p>
+                        </div>
+                        <div class="card-body">
+                            <a href="#" class="card-link text-decoration-none text-success">Github</a>
+                            <a href="#" class="card-link text-decoration-none text-success">Linkedin</a>
+                            <a href="#" class="card-link text-decoration-none text-success">Facebook</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img src="../assets/imgs/jenniferTeam.jpeg" height="350" class="card-img-top" alt="avatarIcon">
+                        <div class="card-body">
+                            <h5 class="card-title">Jennifer Martinez</h5>
+                            <p class="card-text">Ingeniera Catastral y Geodesta, Magister en Geomática, Especialista en
+                                Ingeniería de
+                                Software, Especialista en Dirección y Gestión de Proyectos, Piloto Certificada de
+                                RPPAS/Drones con énfasis en fotogrametría, con nivel avanzado del idioma inglés (C1
+                                MCER). </p>
+                        </div>
+                        <div class="card-body">
+                            <a href="#" class="card-link text-decoration-none text-success">Github</a>
+                            <a href="#" class="card-link text-decoration-none text-success">Linkedin</a>
+                            <a href="#" class="card-link text-decoration-none text-success">Facebook</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img src="../assets/imgs/silvioTeam.jpeg" height="350" class="card-img-top" alt="avatarIcon">
+                        <div class="card-body">
+                            <h5 class="card-title">Silvio Angel Sabalza Morelos</h5>
+                            <p class="card-text">Desarrollador Fullstack Java, tecnólogo en producción industrial,
+                                apasionado por la programación, diseño web y animaciónes</p>
+                        </div>
+                        <div class="card-body">
+                            <a href="#" class="card-link text-decoration-none text-success">Github</a>
+                            <a href="#" class="card-link text-decoration-none text-success">Linkedin</a>
+                            <a href="#" class="card-link text-decoration-none text-success">Facebook</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img src="../assets/imgs/erwinTeam.jpeg" height="350" class="card-img-top" alt="avatarIcon">
+                        <div class="card-body">
+                            <h5 class="card-title">Erwin Yesid Ramirez Mantilla</h5>
+                            <p class="card-text">Tecnologo en telecomunicaciones, administrador de redes informáticas y
+                                desarrollados de software</p>
+                        </div>
+                        <div class="card-body">
+                            <a href="#" class="card-link text-decoration-none text-success">Github</a>
+                            <a href="#" class="card-link text-decoration-none text-success">Linkedin</a>
+                            <a href="#" class="card-link text-decoration-none text-success">Facebook</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img src="../assets/imgs/eneldo.jpg" height="350" class="card-img-top" alt="avatarIcon">
+                        <div class="card-body">
+                            <h5 class="card-title">Eneldo Vanstralhen</h5>
+                            <p class="card-text">Analista de sistemas de información, desarrollador web</p>
+                        </div>
+                        <div class="card-body">
+                            <a href="#" class="card-link text-decoration-none text-success">Github</a>
+                            <a href="#" class="card-link text-decoration-none text-success">Linkedin</a>
+                            <a href="#" class="card-link text-decoration-none text-success">Facebook</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+        
+
+</body>
+
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/styles.css" media="screen" />
+    <title>Doctor's Office MINTIC 2022</title>
+</head>
+<body>
+    <header id="head">
+        <nav class="navbar navbar-expand-lg bg-light border">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="https://unabvirtual.unab.edu.co/soportemisiontic2022/img/Misiontic-Unab.png" height="40"
+                        width="100" />
+                    <img src="../../assets/imgs/projectTitle.png" width="200" height="60" />
+                </a>
+                <button class="p-0 navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <img src="../../assets/imgs/menuIcon.png" height="50" width="50" />
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../../views/index.html">Home</a>
+                        </li>
+        
+                        <li class="nav-item btn-group dropend">
+                            <a href="../patients/index.html" class="nav-link ">Patiens</a>
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">                                
+                            </a>
+                            <ul class="dropdown-menu border border-1 border-primary">
+                                <li><a class="dropdown-item" href="../patients/create.html">New</a></li>
+                                <li><a class="dropdown-item" href="../patients/findOne.html">Search</a></li>
+                            </ul>
+                        </li>
+        
+                        <li class="nav-item btn-group dropend">
+                            <a href="./index.html" class="nav-link ">Doctors</a>
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">                                
+                            </a>
+                            <ul class="dropdown-menu border border-1 border-primary">
+                                <li><a class="dropdown-item" href="./create.html">New</a></li>                        
+                                <li><a class="dropdown-item" href="./findOne.html">Search</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="../schedules/index.html">Schedules</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item btn-group dropend">
+                            <a href="../appointments/index.html" class="nav-link ">Appointments</a>
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                            </a>
+                            <ul class="dropdown-menu border border-1 border-primary">
+                                <li><a class="dropdown-item" href="../appointments/create.html">New</a></li>                        
+                                <li><a class="dropdown-item" href="../appointments/findOne.html">Search</a></li>
+                            </ul>
+                        </li>
+        
+                        <li class="nav-item btn-group dropend">
+                            <a href="../medical_prescriptions/index.html" class="nav-link ">Medical Prescriptions</a>
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                            </a>
+                            <ul class="dropdown-menu border border-1 border-primary">
+                                <li><a class="dropdown-item" href="../medical_prescriptions/index.html">New</a></li>                        
+                                <li><a class="dropdown-item" href="../medical_prescriptions/findOne.html">Search</a></li>
+                            </ul>
+                        </li>
+        
+                        <li class="nav-item btn-group dropend">
+                            <a href="../medicines/index.html" class="nav-link ">Medicines</a>
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                            </a>
+                            <ul class="dropdown-menu border border-1 border-primary">
+                                <li><a class="dropdown-item" href="../medicines/create.html">New</a></li>                        
+                                <li><a class="dropdown-item" href="../medicines/findOne.html">Search</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <span class="navbar-text">
+                        <img src="../../assets/imgs/teamName.png" alt="MACRO-CODE" height="60" width="200">
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div>
+        <div class="mt-2 ms-2">              
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item" aria-current="page">
+                    <a class="text-decoration-none" href="./index.html">Doctors</a>
+                </li>
+                  <li class="breadcrumb-item active">Create</li>
+                </ol>
+              </nav>
+        </div>
+
+        <div class="container-fluid justify-content-center d-flex">
+            <form class="col-md-5 border border-2 p-3 rounded rounded-2 border-dark" onsubmit="" method="POST">
+                <div class="row">
+                    <input id="inputId" hidden="true" type="text" readonly="true" class="form-control" placeholder="First Name" aria-label="First name">
+                    <div class="col g-3">
+                    <label for="inputName" class="form-label">First Name:</label>
+                    <input id="inputName" type="text" class="form-control" placeholder="First Name" aria-label="First name">
+                    </div>
+
+                    <div class="col g-3">
+                    <label for="inputLastName" class="form-label">Last Name:</label>
+                    <input id="inputLastName" type="text" class="form-control" placeholder="Last Name" aria-label="Last name">
+                    </div>
+                  </div>
+
+                <div class="row">
+                    <div class="col g-3">
+                    <label for="inputAge" class="form-label">Age: </label>
+                    <input type="text" class="form-control" id="inputAge">
+                    </div> 
+
+                    <div class="col g-3">
+                        <label for="inputDocumentType" class="form-label">Documen type:</label>
+                        <input id="inputDocumentType" type="text" class="form-control" placeholder="CC">
+                    </div>
+                  
+                </div>
+
+                <div class="row align-items-end">
+                   
+                    <div class="col">
+                        <label for="inputDocument" class="form-label">Document Number:</label>
+                        <input id="inputDocument" type="text" class="form-control" placeholder="Document">
+                    </div>
+                    
+                    <div class="col g-3">
+                        <label for="inputPhone" class="form-label">Phone Number:</label>
+                        <input id="inputPhone" type="text" class="form-control" placeholder="Phone Number">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col g-3 my-4">
+                        <label for="selectGender" class="form-label">Gender:</label>                       
+                        <select class="form-select" id="selectGender">
+                            <option >How do you identify yourself ?</option>
+                            <option selected value="1">Female</option>
+                            <option value="2">Male</option>
+                            <option value="3">I prefer not to say.</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="d-grid gap-2 col-8 mx-auto">
+                    <button type="submit" onclick="saveDoctor()" class="btn btn-primary">Create</button>
+                    <button type="submit" onclick="editDoctor()" class="btn btn-success">Edit</button>
+                </div>
+            </form>
+        </div>
+
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+        <script src="../../assets/doctors.js"></script>
+        <script src="../../assets/request.js"></script>
+        <script>
+            window.onload = function(){
+                const urlParams = new URLSearchParams(window.location.search);
+                if(urlParams.get('id') !=null) loadDoctor(urlParams.get('id'))
+            }
+        </script>
+</body>
+</html>

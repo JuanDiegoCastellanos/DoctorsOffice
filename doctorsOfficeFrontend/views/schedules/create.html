@@ -117,22 +117,22 @@
                 <div class="row">
                     <div class="col g-3 mb-3">
                     <label for="inputHour" class="form-label">Hour: </label>
-                    <input type="datetime-local" max="23" min="0" step="0.5" class="form-control" id="inputHour">
+                    <input type="time"  class="form-control" id="inputHour">
                     </div> 
 
                     <div class="col g-3 mb-3">
                         <label for="inputDoctor" class="form-label">Doctor:</label>                       
                         <select class="form-select" id="inputDoctor">
+                            <option >Doctor?</option>
                         </select>
                     </div>
                   
                 </div>               
                 <div class="row">
-                    
                 </div>
                 <div class="d-grid gap-2 col-8 mx-auto">
-                    <button type="submit" onclick="saveDoctor()" class="btn btn-primary">Create</button>
-                    <button type="submit" onclick="editDoctor()" class="btn btn-success">Edit</button>
+                    <button type="submit" onclick="saveSchedule()" class="btn btn-primary">Create</button>
+                    <button type="submit" onclick="editSchedule()" class="btn btn-success">Edit</button>
                 </div>
             </form>
         </div>

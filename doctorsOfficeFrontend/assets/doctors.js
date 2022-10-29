@@ -54,6 +54,7 @@ function loadDoctorByName(){
                     doctor = element;
                 }
             }
+            if(doctor != undefined || doctor != null){
             divTable.innerHTML = `
          <table class="table table-dark table-hover table-sm">
             <thead>
@@ -83,6 +84,10 @@ function loadDoctorByName(){
             </tbody>
          </table>
          `;
+            }
+            else{
+                alert("No existe el doctor");
+            }
         }
         
     } 

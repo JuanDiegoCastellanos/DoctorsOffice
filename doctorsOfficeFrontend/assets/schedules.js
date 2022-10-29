@@ -31,51 +31,59 @@ function loadData(){
         }
     }
 }
-// function loadMedicineByName(){
 
-//     let request = sendRequest('medicine/list', 'GET', '');
-//     let divTable = document.getElementById('spaceTable');
-//     let name = document.getElementById('inputName').value;
-//     let data;
-//     request.onload = function () {
-//         if(name == ''){
-//             alert('Por favor llena el campo de búsqueda')
-//         }else{
-//             data = request.response;
-//             let medicine;
-//             for (let index = 0; index < data.length; index++) {
-//                 const element = data[index];
-//                 if(element.medicineName.trim().toUpperCase() == name.trim().toUpperCase()){
-//                     medicine = element;
-//                 }
-//             }
-            
+function loadScheduleDoctorByName(){
 
-//             divTable.innerHTML = `
-//          <table class="table table-dark table-hover table-sm">
-//             <thead>
-//                 <tr>
-//                     <th class="text-center" >Medicine Name</th>
-//                     <th class="text-center" >Laboratory</th>
-//                     <th class="text-center" ></th>
-//                 </tr>
-//             </thead>
-//             <tbody>
-//                 <tr>
-//                     <td class="" >${medicine.medicineName}</td>
-//                     <td class="text-center">${medicine.laboratory}</td>
-//                     <td class="text-center">
-//                     <a href="../medicines/create.html?id=${medicine.medicineId}"><i class="bi bi-pen-fill" style="color: darkturquoise;"></i></a>
-//                     <a onclick="deleteMedicine(${medicine.medicineId})" href=""><i class="bi bi-trash3-fill" style="color: red;"></i></a>
-//                     </td>
-//                  </tr>                    
-//             </tbody>
-//          </table>
-//          `;
-//         }
+    let request = sendRequest('schedule/list', 'GET', '');
+    let divTable = document.getElementById('spaceTable');
+    let name = document.getElementById('inputName').value;
+    let data;
+    request.onload = function () {
+        if(name == ''){
+            alert('Por favor llena el campo de búsqueda')
+        }else{
+            data = request.response;
+            let schedule;
+            for (let index = 0; index < data.length; index++) {
+                const element = data[index];
+                if(element.doctor.doctorName.trim().toUpperCase() == name.trim().toUpperCase()){
+                    schedule = element;
+                }
+            }
+            if(schedule != undefined || schedule != null){
+                divTable.innerHTML = `
+                <table class="table table-dark table-hover table-sm">
+            <thead>
+                <tr>
+                    <th class="text-center" >Week</th>
+                    <th class="text-center" >Day</th>
+                    <th class="text-center" >Hour</th>
+                    <th class="text-center" >Doctor</th>
+                    <th class="text-center" ></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="" >${schedule.scheduleWeek}</td>
+                    <td class="text-center">${schedule.scheduleDay}</td>
+                    <td class="text-center">${schedule.scheduleHour}</td>
+                    <td class="text-center">${schedule.doctor.doctorName}</td>
+                    <td class="text-center">
+                    <a href="../schedules/create.html?id=${schedule.scheduleId}"><i class="bi bi-pen-fill" style="color: darkturquoise;"></i></a>
+                    <a onclick="deleteSchedule(${schedule.scheduleId})" href=""><i class="bi bi-trash3-fill" style="color: red;"></i></a>
+                    </td>
+                 </tr>                    
+            </tbody>
+         </table>
+                `;
+                
+            }else{
+                alert("El doctor no existe")
+            }
+        }
         
-//     } 
-// }
+    } 
+}
 
 function loadDoctors(){
     let request = sendRequest('doctor/list', 'GET', '');
@@ -142,7 +150,7 @@ function saveSchedule(){
     let data = {
         "scheduleWeek":week,
         "scheduleDay":day,
-        "schedulehour":hour,
+        "scheduleHour":hour,
         "doctor":{
             "doctorId":doctor
         }
@@ -169,7 +177,7 @@ function editSchedule() {
         "scheduleId":id,
         "scheduleWeek":week,
         "scheduleDay":day,
-        "schedulehour":hour,
+        "scheduleHour":hour,
         "doctor":{
             "doctorId":doctor
         }

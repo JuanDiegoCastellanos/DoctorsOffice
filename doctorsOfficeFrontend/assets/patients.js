@@ -53,8 +53,7 @@ function loadPatientByName(){
                     patient = element;
                 }
             }
-            console.log(patient);
-
+            if(patient != undefined || patient != null){
             divTable.innerHTML = `
          <table class="table table-dark table-hover table-sm">
             <thead>
@@ -86,6 +85,9 @@ function loadPatientByName(){
             </tbody>
          </table>
          `;
+        }else{
+            alert("El paciente no existe");
+        }
         }
         
     } 

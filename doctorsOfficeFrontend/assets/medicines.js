@@ -47,8 +47,7 @@ function loadMedicineByName(){
                     medicine = element;
                 }
             }
-            
-
+            if(medicine != undefined || medicine != null){
             divTable.innerHTML = `
          <table class="table table-dark table-hover table-sm">
             <thead>
@@ -70,6 +69,9 @@ function loadMedicineByName(){
             </tbody>
          </table>
          `;
+            }else{
+                alert("Este medicamento no existe");
+            }
         }
         
     } 
